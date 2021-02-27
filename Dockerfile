@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM alpine:3.4
 
 EXPOSE 8080
 
@@ -10,4 +10,4 @@ RUN apk add --update go git && \
   rm -rf /tmp/gotty /var/cache/apk/*
 
 ENTRYPOINT ["/usr/local/bin/gotty"]
-CMD ["--permit-write","--reconnect","/bin/bash"]
+CMD ["--permit-write","--reconnect","/bin/sh"]
